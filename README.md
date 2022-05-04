@@ -1,19 +1,6 @@
-# Webpack Starter Kit
+# COPP14-education
 
-## Use
+by STONE
 
-```
-    npm i
-    npm run build
-```
-or
-
-```
-   npm i
-   npm run start
-```
-#
-
-By qsiax
 
 
