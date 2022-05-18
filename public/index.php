@@ -38,10 +38,10 @@
 					<div class="menu__image"></div>
 					<div class="menu__content">
 						<div class="menu__item">
-							<a class="menu__item-text">Главная</a>
+							<a class="menu__item-text" href="/">Главная</a>
 						</div>
 						<div class="menu__item">
-							<a class="menu__item-text">О нас</a>
+							<a class="menu__item-text" href="about.php">О нас</a>
 						</div>
 						<div class="menu__item">
 							<a class="menu__item-text">Вакансии</a>
@@ -106,30 +106,60 @@
 		<div class="check__body">
 			<div class="check__close"></div>
 			<div class="check__heading">Регистрация</div>
-			<div class="check__login">У вас есть аккаунт?  <span id="btnCheck">Войти</span></div>
 			<form class="check__form" method="POST" action="libs/check.php">
-				<input type="text" name="name" placeholder="Имя">
-				<input type="text" name="surname" placeholder="Фамилия">
-				<input type="email" name="login" placeholder="Почта (Логин)">
-				<input type="password" name="pass" placeholder="Пароль">
-				<input type="password" name="pass_conf" placeholder="Подтвердить пароль">
-				<button type="submit">Регистрироваться</button>
+				<div class="check__form-input-wrapper">
+					<input type="text" name="name" placeholder="Имя">
+					<div class="check__form-icon"></div>
+				</div>
+
+				<div class="check__form-input-wrapper">
+					<input type="text" name="surname" placeholder="Фамилия">
+					<div class="check__form-icon"></div>
+				</div>
+
+				<div class="check__form-input-wrapper">
+					<input type="email" name="login" placeholder="Почта (Логин)">
+					<div class="check__form-icon"></div>
+				</div>
+
+				<div class="check__form-input-wrapper">
+					<input type="password" name="pass" placeholder="Пароль">
+					<div class="check__form-icon"></div>
+				</div>
+
+				<select name="role" size="1">
+					<option value="0" selected>Роль</option>
+					<option value="1">Школьник</option>
+					<option value="2">Студент</option>
+					<option value="3">Преподаватель</option>
+				</select>
+				<div class="check__login">У вас уже есть аккаунт?<span id="btnCheck">Войти в профиль</span></div>
+				<button type="submit">Зарегистрироваться</button>
+				<a class="google">
+					<div class="google-icon"></div>
+					<div class="google-text">Новый профиль через Google</div>
+				</a>
 			</form>
 		</div>
 	</div>
+
 
 	<header class="header">
 		<div class="header__container _container">
 			<div class="header__body">
 				<div class="header__block">
-					<div class="header__logo">
-						<div class="header__logo-dot"></div>
+					<div class="header__logo-wrapper">
+						<div class="header__logo">
+							<div class="header__logo-dot"></div>
+						</div>
 					</div>
-					<div class="header__text">
-						Центр
-						Опережающей
-						Профессиональной
-						Подготовки
+					<div class="header__text-wrapper">
+						<div class="header__text">
+							Центр
+							Опережающей
+							Профессиональной
+							Подготовки
+						</div>
 					</div>
 						<ul class="header__navigation">
 							<li><a href="#home">Главная</a></li>
@@ -144,14 +174,25 @@
 				</div>
 				<div class="header__block">
 					<?php
-					if($_COOKIE['users'] == ''):
-				?>
-				<div class="header__btn-auth">Войти</div>
-				<?php else: ?>
-				<div class="header__btn-profile"></div>
-				<? endif; ?>
-					
-					
+						if($_COOKIE['users'] == ''):
+					?>
+					<div class="header__btn-auth">Войти</div>
+					<?php else: ?>
+					<div class="header__btn-profile">
+						<div class="profile">
+							<div class="profile__item">
+								<a class="profile__item-text">Мои программы</a>
+							</div>
+							<div class="profile__item">
+								<a class="profile__item-text" href="profile.php">Настройка профиля <span> <?=$_COOKIE['users']?> </span></a>
+							</div>
+							<div class="profile__item"></div>
+							<div class="profile__item">
+								<a class="profile__item-text exit" href="libs/exit.php">Выйти</a>
+							</div>
+						</div>
+					</div>
+					<? endif; ?> 
 					<div class="header__btn"></div>
 				</div>
 			</div>
@@ -164,7 +205,7 @@
 				<div class="main__image"></div>
 				<div class="main__block">
 					<div class="main__heading">
-						<span>Образовательная</span>
+						Образовательная
 						<span>платформа</span>
 					</div>
 					<div class="main__text">
@@ -189,6 +230,8 @@
 						</div>
 					</div>
 				</div>
+				
+
 			</div>
 		</div>
 	</section>
@@ -198,7 +241,7 @@
 			<div class="category__body">
 				<div class="category__block">
 					<div class="category__heading">
-						<span>Направления</span>
+						Направления
 						<span>обучения</span>
 					</div>
 					<div class="category__text">Собрали бесплатные курсы и занятия, которые помогут открыть для себя новое</div>
@@ -285,7 +328,7 @@
 			<div class="advantage__body">
 				<div class="advantage__block">
 					<div class="advantage__heading">
-						<span>Раскройте свои</span>
+						Раскройте свои
 						<span>сильные стороны</span>
 					</div>
 					<div class="advantage__num">02</div>
@@ -354,7 +397,7 @@
 			<div class="about__body">
 				<div class="about__block">
 					<div class="about__heading">
-						<span>О нашей</span>
+						О нашей
 						<span>компании</span>
 					</div>
 					<div class="about__text">В нашей команде 33 профессионала.
@@ -400,7 +443,10 @@
 		<div class="prof__container _container">
 			<div class="prof__body">
 				<div class="prof__block">
-					<div class="prof__heading">Профориентация</div>
+					<div class="prof__heading">
+						Пройти тест на
+						<span>Профориентация</span>
+					</div>
 					<div class="prof__text">Найдите свою идеальную профессию
 					</div>
 					<div class="prof__num">04</div>

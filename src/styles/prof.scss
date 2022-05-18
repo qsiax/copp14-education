@@ -21,7 +21,14 @@
         line-height: 100%;
         text-transform: uppercase;
         margin-top: 20px;
-        margin-right: 146px;
+        margin-right: 105px;
+        max-width: 505px;
+        span {
+            color: $primary-color;
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 500px;
+        }
     }
 
     &__text {

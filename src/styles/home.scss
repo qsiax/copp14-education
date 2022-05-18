@@ -33,9 +33,11 @@
         max-width: 535px;
         text-transform: uppercase;
         margin-top: 20px;
-        span:nth-child(2) {
+        span {
+            color: $primary-color;
             font-family: 'Playfair Display';
             font-style: italic;
+            font-weight: 500px;
         }
     }
 

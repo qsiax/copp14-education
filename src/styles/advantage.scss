@@ -22,9 +22,11 @@
         margin-top: 20px;
         text-transform: uppercase;
         max-width: 510px;
-        span:nth-child(2) {
+        span {
+            color: $primary-color;
             font-family: 'Playfair Display';
             font-style: italic;
+            font-weight: 500px;
         }
     }
 

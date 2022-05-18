@@ -10,9 +10,12 @@
 		if(count($users) == 0) {
 			echo "Такой пользователь не найден";
 			exit();
-		}
+		};
 
-		setcookie('users', $users['name'], time() + 3600, "/");
+		setcookie('users', $login, time() + 3600, "/");
+		setcookie('surname', $users['surname'], time() + 3600, "/");
+		setcookie('name', $users['name'], time() + 3600, "/");
+		setcookie('role', $users['role'], time() + 3600, "/");
 
     $mysql->close();
 

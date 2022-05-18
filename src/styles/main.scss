@@ -6,7 +6,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	scroll-padding-top: 100px;
 }
 
 ::-webkit-scrollbar {
@@ -92,6 +91,10 @@ body {
 	transform: scale(.5);
 }
 
+.main-02__image {
+	transform: scale(.5);
+}
+
 .header__navigation {
 	overflow: hidden;
 	li {
@@ -121,3 +124,5 @@ body {
 .header__text {
 	transform: translateY(120%);
 }
+
+

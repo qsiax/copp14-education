@@ -8,7 +8,7 @@
     background: rgba(16, 16, 16, 0.35);
     z-index: 99;
     transition: .7s ease;
-    transform: translateY(-120%);
+    transform: translateY(-110%);
     &.active {
         transform: translateY(0%);
     }
@@ -197,98 +197,266 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    background: rgb(0, 0, 0, .8);
+    background: rgba(16, 16, 16, 0.35);
     z-index: 99;
     transition: .7s ease;
-    transform: translateY(99.9%);
+    transform: translateY(110%);
     &.active {
         transform: translateY(0%);
     }
     * {
-        color: $main-color;
+        color: $text;
     }
     &__body {
-        width: 500px;
-        height: 500px;
-        background: $secondary-color;
-        padding: 0px 30px;
+        width: 480px;
+        height: 602px;
+        background: $main-color;
+        border-radius: 30px;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__form-input-wrapper {
+        display: flex;
+        position: relative;
+        width: 340px;
+        margin-bottom: 0px;
+        &:nth-child(2) {
+            .check__form-icon {
+                position: absolute;
+                bottom: 25px;
+                right: 5px;
+                width: 16px;
+                height: 16px;
+                @include background;
+                background: url(/img/check-profile.svg) center center;
+                background-repeat: no-repeat;
+            }
+        }
+        &:nth-child(3) {
+            .check__form-icon {
+                position: absolute;
+                bottom: 25px;
+                right: 3px;
+                width: 20px;
+                height: 19px;
+                @include background;
+                background: url(/img/check-email.svg) center center;
+                background-repeat: no-repeat;
+            }
+        }
+        &:nth-child(4) {
+            .check__form-icon {
+                position: absolute;
+                bottom: 25px;
+                right: 5px;
+                width: 16px;
+                height: 21px;
+                @include background;
+                background: url(/img/check-pass.svg) center center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &__form-icon {
+        position: absolute;
+        bottom: 25px;
+        right: 5px;
+        width: 16px;
+        height: 16px;
+        @include background;
+        background: url(/img/check-profile.svg) center center;
     }
 
     &__close {
-        width: 25px;
-        height: 25px;
+        width: 14px;
+        height: 14px;
         position: absolute;
-        top: 40px;
-        right: 20px;
+        top: 55px;
+        right: 75px;
         cursor: pointer;
         &:before {
             content: '';
             position: absolute;
             width: 100%;
-            height: 1px;
-            background: $main-color;
+            height: 2px;
+            background: #323232;
             transform: rotate(45deg);
         }
         &:after {
             content: '';
             position: absolute;
             width: 100%;
-            height: 1px;
-            background: $main-color;
+            height: 2px;
+            background: #323232;
             transform: rotate(-45deg);
         }
     }
 
     &__heading {
-        margin-top: 60px;
-        font-size: 1.8em;
-        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 100%;
+        margin-bottom: 30px;
     }
 
     &__login {
-        font-size: 1em;
-        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        color: $text-secondary;
+        margin-bottom: 29px;
         span {
             color: $primary-color;
-            margin-left: 5px;
             cursor: pointer;
+            margin-left: 2px;
         }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
-        max-width: 300px;
+        max-width: 340px;
         input {
             background: none;
             border: none;
-            border-bottom: 1px solid $main-color;
+            border-bottom: 2px solid $text;
             margin-bottom: 20px;
             outline: none;
             font-size: 1em;
             @include manrope;
             font-weight: 500;
+            width: 100%;
+            padding-bottom: 10px;
             &::placeholder {
-                font-size: 1em;
-                @include manrope;
-                color: rgba(255, 255, 255, .4);
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 25px;
+                color: $text-secondary;
             }
             &:last-child {
                 margin-bottom: 40px;
             }
         }
-        button {
-            max-width: 200px;
-            margin-left: 100px;
-            height: 40px;
+        
+        select {
+            background: none;
             border: none;
-            color: #000;
-            font-size: 1em;
-            font-weight: 600;
+            border-bottom: 2px solid $text;
+            margin-bottom: 20px;
+            outline: none;
             @include manrope;
-            border-radius: 2px;
+            width: 100%;
+            padding-bottom: 10px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 25px;
+            color: $text-secondary;
+        }
+
+        button[type='submit'] {
+            width: 340px;
+            height: 60px;
+            border: none;
+            @include manrope;
+            border-radius: 30px;
             cursor: pointer;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 25px;
+            color: #eee;
+            background: $primary-color;
+            margin-bottom: 10px;
+        }
+        a.google {
+            width: 340px;
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background: none;
+            border: 2px solid $text;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: .5s ease;
+            .google-text {
+                position: relative;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 25px;
+                color: $text;
+                @include manrope;
+                z-index: 1;
+                transition: .5s ease;
+            }
+            .google-icon {
+                width: 24px;
+                height: 24px;
+                @include background;
+                background: url(/img/google.svg);
+                margin-right: 10px;
+                z-index: 1;
+            }
         }
     }
+}
+
+
+
+// PROFILE
+.profile {
+    top: 40px;
+    right: -80px;
+    position: absolute;
+    width: 203px;
+    background: #eee;
+    z-index: 8;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: .5s ease;
+    * {
+       color: $text;
+    }
+    &__item {
+        border-top: .85px solid $text;
+        position: relative;
+        padding: 20px;
+        &:first-child {
+            margin-top: 10px;
+        }
+        &:last-child {
+            border-bottom: .85px solid $text;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__item-text {
+       cursor: pointer;
+       transition: .3s ease;
+       span {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: $text-secondary;
+       }
+    }
+    .exit {
+        &:hover {
+            color: $error;
+        }
+    }
+}
+
+.header__btn-profile:hover > .profile {
+    transform: translateX(0);
+    opacity: 1;
 }

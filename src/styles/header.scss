@@ -2,8 +2,8 @@
     background: none;
     width: 100%;
     padding: 20px 0px;
-    overflow: hidden;
     &__container {
+        overflow: visible;
     }
 
     &__body {
@@ -17,12 +17,18 @@
         align-items: center;
     }
 
+    &__logo-wrapper {
+        width: 85px;
+        height: 85px;
+        margin-right: 103px;
+        overflow: hidden;
+    }
+
     &__logo {
         @include background;
         width: 80px;
         height: 81px;
         cursor: pointer;
-        margin-right: 103px;
         position: relative;
     }
 
@@ -37,13 +43,19 @@
         transform: translateY(-200px);
     }
 
+    &__text-wrapper {
+        width: 115px;
+        height: 65px;
+        overflow: hidden;
+        margin-right: 110px;
+    }
+
     &__text {
         font-weight: 500;
         font-size: 12px;
         line-height: 16px;
         max-width: 115px;
         color: $text-secondary;
-        margin-right: 110px;
     }
 
     &__navigation {

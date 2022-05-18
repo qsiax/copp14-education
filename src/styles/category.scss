@@ -24,9 +24,11 @@
         max-width: 360px;
         margin-right: 244px;
         margin-top: 20px;
-        span:nth-child(2) {
+        span {
+            color: $primary-color;
             font-family: 'Playfair Display';
             font-style: italic;
+            font-weight: 500px;
         }
     }
 

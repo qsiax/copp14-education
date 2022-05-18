@@ -66,6 +66,12 @@ TweenMax.to('.main__image', 1.5, {
 	ease: Expo.easeInOut
 })
 
+TweenMax.to('.main-02__image', 1.5, {
+	delay: 2,
+	scale: 1,
+	ease: Expo.easeInOut
+})
+
 TweenMax.to('.main__block', 1.5, {
 	delay: 2.5,
 	width: '100%',
@@ -128,7 +134,6 @@ const formAuth = document.querySelector('.auth'),
     menuBtn = document.querySelector('.header__btn'),
     menuBtnClose = document.querySelector('.menu__btn'),
     btnAuth = document.querySelector('.header__btn-auth');
-
 
 menuBtn.addEventListener('click', () => {
     menu.classList.add('active')
@@ -237,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     spaceBetween: 60,
                     autoplay: false
                 }
-            }
+            },
         });
     }
   })
